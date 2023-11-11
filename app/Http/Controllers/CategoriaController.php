@@ -49,4 +49,12 @@ public function BuscarCategoriaNome(Request $request)
     $registrosCategoria = $registrosCategoria->get();
     return view('manipula_categoria',['registrosCategoria' => $registrosCategoria]);    
 }
+public function MostrarAlterarCategoria(Categoria $registrosCategoria){
+    $registrosCategoria = Categoria::All();
+    return view('altera_aula',['registrosCategoria'=> $registrosCategoria]);
+}
+public function AlterarBancoCategoria(categoria $registroCategoria, Request $request){
+    alert("Dados alterados com sucesso");
+    return Redirect::route('index');
+}
 }
